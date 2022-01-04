@@ -1,0 +1,241 @@
+@font-face {
+  font-family: "SourceHanSerifSC-Heavy";
+  src: url("../assets/font/SourceHanSerif.woff") format("woff"),
+    
+    url("../assets/font/SourceHanSerif.ttf") format("truetype"),
+    
+    url("../assets/font/SourceHanSerif.svg") format("svg");
+  /* iOS 4.1- */
+  font-style: normal;
+  font-weight: weight;
+}
+
+body {
+  overflow: hidden;
+}
+
+.errModal__mask,
+.modal__mask {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.527);
+}
+
+.errModal--hide.errModal,
+.modal--hide {
+  display: none !important;
+}
+
+.errModal {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.errModal .modal__main {
+  position: relative;
+  z-index: 2;
+  width: 5.49rem;
+}
+
+.errModal .modal__close_btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 0.37rem;
+  width: 0.81rem;
+}
+
+/* 默认设置所有的 svga 隐藏 */
+
+.svga {
+  z-index: 1;
+}
+
+/* 音乐播放按钮 */
+
+#musicPlayer {
+  width: 0.92rem;
+  height: 0.92rem;
+  position: fixed;
+  top: 0.4rem;
+  right: 0.4rem;
+  background-image: url('../assets/music_disabled.png');
+  z-index: 1000;
+  background-size: 100%;
+}
+
+#musicPlayer.active {
+  background-image: url('../assets/music.png');
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.swiper-container {
+  width: 7.5rem;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.swiper-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.swiper-slide {
+  overflow: hidden;
+  position: relative;
+}
+
+.page {
+  background: #fff;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7.5rem;
+  height: 16.24rem;
+  background-size: 100%;
+}
+
+.page>.content {
+  position: absolute;
+  top: calc((16.24rem - 100vh) / 2);
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  max-height: 16.24rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.page__title {
+  position: relative;
+  margin-top: 1.72rem;
+  margin-left: .52rem;
+  line-height: .55rem;
+  font-size: .52rem;
+  font-family: "SourceHanSerifSC-Heavy";
+  font-weight: bold;
+  font-stretch: normal;
+  color: #6d4a4a;
+}
+
+.page__title--small {
+  margin-left: .52rem;
+  margin-top: .27rem;
+  font-size: .3rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: .40rem;
+  letter-spacing: .05rem;
+  color: #6d4a4a;
+  position: relative;
+}
+
+.page__title--small--red {
+  color: #ce2e14;
+  font-size: .36rem;
+}
+
+.page__desc {
+  position: absolute;
+  font-size: .24rem;
+  line-height: .4rem;
+  text-align: right;
+  padding-right: .37rem;
+  color: #fff;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.356));
+}
+
+#musicPlayer.active {
+  box-shadow: 0 0 0.3rem 0.1rem #fff;
+  border-radius: 50%;
+}
+
+/* 修改过 弹窗想关 */
+
+.alert {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+.alert__mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.699);
+  z-index: 1;
+}
+
+.alert__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 2rem;
+  border-radius: 0.1rem;
+  transform: translateY(-50%) translateX(-50%);
+  background: #fff;
+  z-index: 1;
+  display: flex;
+  padding: 0.4rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.alert__content__text {
+  font-size: 0.35rem;
+  line-height: 0.45rem;
+  text-align: center;
+}
+
+.alert__btn {
+  position: absolute;
+  height: 0.8rem;
+  width: 100%;
+  border: 0;
+  bottom: 0;
+}
+
+.alert.alert--hide {
+  display: none;
+}
